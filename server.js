@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const port = 3000;
 
@@ -7,36 +8,39 @@ const questions = {
     education: [
         {
             question: "Will you pursue higher education?",
-            options: ["Yes","No"]
+            options: ["Yes", "No"]
         },
         {
-            question: "Do your grades reflect your potential? ",
-            options: ["Yes","No"]
+            question: "Do your grades reflect your potential?",
+            options: ["Yes", "No"]
         }
     ],
     health: [
         {
             question: "How many hours sleep do you take in a day?",
-            options: ["3","6","8","8+"]
+            options: ["3", "6", "8", "8+"]
         },
         {
             question: "Do you give yourself selftime?",
-            options: ["Yes","No"]
+            options: ["Yes", "No"]
         }
     ],
     technology: [
         {
-            question: "How many projects have your created",
-            options: ["1","more than 1", "more than 5"]
+            question: "How many projects have you created?",
+            options: ["1", "more than 1", "more than 5"]
         },
         {
             question: "Are you in AI/ML?",
-            options: ["Yes","No"]
+            options: ["Yes", "No"]
         }
     ]
 };
 
-// Business questions endpoint
+// Use the CORS middleware
+app.use(cors());
+
+// Education questions endpoint
 app.get('/api/v2/education', (req, res) => {
     res.json(questions.education);
 });

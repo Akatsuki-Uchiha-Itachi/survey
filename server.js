@@ -4,41 +4,41 @@ const port = 3000;
 
 // Questions data with options
 const questions = {
-    business: [
+    education: [
         {
-            question: "What is the biggest challenge your business is facing today?",
-            options: ["Market competition", "Customer acquisition", "Cash flow", "Regulatory compliance"]
+            question: "Will you pursue higher education?",
+            options: ["Yes","No"]
         },
         {
-            question: "How do you currently measure business success?",
-            options: ["Revenue growth", "Customer satisfaction", "Market share", "Employee engagement"]
+            question: "Do your grades reflect your potential? ",
+            options: ["Yes","No"]
         }
     ],
     health: [
         {
-            question: "How frequently do you engage in physical exercise?",
-            options: ["Daily", "Weekly", "Monthly", "Rarely"]
+            question: "How many hours sleep do you take in a day?",
+            options: ["3","6","8","8+"]
         },
         {
-            question: "What type of diet do you follow?",
-            options: ["Vegetarian", "Vegan", "Non-Vegetarian", "Pescatarian"]
+            question: "Do you give yourself selftime?",
+            options: ["Yes","No"]
         }
     ],
     technology: [
         {
-            question: "Which programming language do you primarily use?",
-            options: ["JavaScript", "Python", "Java", "C#"]
+            question: "How many projects have your created",
+            options: ["1","more than 1", "more than 5"]
         },
         {
-            question: "How many years of experience do you have in the tech industry?",
-            options: ["Less than 1 year", "1-3 years", "3-5 years", "More than 5 years"]
+            question: "Are you in AI/ML?",
+            options: ["Yes","No"]
         }
     ]
 };
 
 // Business questions endpoint
-app.get('/api/v2/business', (req, res) => {
-    res.json(questions.business);
+app.get('/api/v2/education', (req, res) => {
+    res.json(questions.education);
 });
 
 // Health questions endpoint
